@@ -3,7 +3,7 @@
 Mini Project 3 - Praktikum Pemrograman Berorientasi Objek.
 Program ini melanjutkan Mini Project 2 (Sistem Pengelolaan Ekspedisi Antariksa) dengan tetap mempertahankan struktur MVC, encapsulation, inheritance, dan polymorphism yang sudah ada, serta menambahkan **interface** sebagai nilai tambah.
 
-## 1. Deskripsi Singkat Program
+## Deskripsi Singkat Program
 
 Program ini adalah aplikasi konsol (CLI) berbasis Java untuk mengelola data operasional sebuah lembaga eksplorasi antariksa, yang terdiri dari tiga entitas utama:
 
@@ -13,26 +13,26 @@ Program ini adalah aplikasi konsol (CLI) berbasis Java untuk mengelola data oper
 
 Setiap entitas mendukung operasi CRUD penuh (Tambah, Tampilkan, Ubah, Hapus), ditambah satu fitur baru di Mini Project 3: **Ringkasan Semua Data**, yang menampilkan Ekspedisi, Kru, dan Pesawat sekaligus dalam satu daftar gabungan.
 
-## 2. Struktur Package (MVC)
+## Struktur Package (MVC)
 
 ```
 src/
 ├── mini/project/pkg1/
-│   └── Main.java              # Entry point, hanya menampilkan menu & mendelegasikan ke Controller
-├── model/                      # (Model) Representasi data & aturan dasar tiap entitas
-│   ├── EntitasAntariksa.java   # interface - kontrak umum lintas entitas (nilai tambah)
+│   └── Main.java              
+├── model/                      
+│   ├── EntitasAntariksa.java   
 │   ├── Ekspedisi.java
-│   ├── Kru.java                # superclass abstrak
-│   ├── Astronot.java           # subclass Kru
-│   ├── Teknisi.java            # subclass Kru
+│   ├── Kru.java                
+│   ├── Astronot.java           
+│   ├── Teknisi.java           
 │   └── PesawatAntariksa.java
-├── view/                        # (View) Seluruh tampilan teks & pembacaan input + validasi
+├── view/                       
 │   └── View.java
-└── controller/                  # (Controller) Logika bisnis: CRUD, validasi, pencarian, ringkasan
+└── controller/                  
     ├── EkspedisiController.java
     ├── KruController.java
     ├── PesawatController.java
-    └── RingkasanController.java # controller baru untuk fitur Ringkasan Semua Data
+    └── RingkasanController.java
 ```
 
 - **Model** hanya berisi atribut (`private`), constructor, getter/setter, dan method tampilan data miliknya sendiri. Tidak ada logika menu atau `Scanner` di sini.
@@ -40,7 +40,7 @@ src/
 - **Controller** menyimpan `ArrayList` data, berisi seluruh logika CRUD dan validasi (misalnya cek ID duplikat), lalu memanggil `View` untuk berinteraksi dengan pengguna dan `Model` untuk membuat/mengubah objek data.
 - **Main** hanya menampilkan struktur menu dan meneruskan pilihan pengguna ke method Controller yang sesuai.
 
-## 3. Penjelasan Alur Program
+## Penjelasan Alur Program
 
 1. Program dimulai dari `Main.java`, menampilkan menu utama dengan 4 modul (Ekspedisi, Kru, Pesawat, Ringkasan) dan 1 pilihan keluar.
 2. Saat program dijalankan, `EkspedisiController`, `KruController`, dan `PesawatController` masing-masing langsung mengisi **dummy data awal** ke `ArrayList`-nya, sehingga menu "Tampilkan Data" langsung berisi data tanpa harus input manual dulu.
@@ -49,7 +49,7 @@ src/
 5. Semua pembacaan input dari keyboard (`Scanner`) beserta validasinya dipusatkan di `View`, dipakai ulang oleh seluruh Controller.
 6. Program terus berputar dalam menu (`do-while`) sampai pengguna memilih "Keluar"/"Kembali".
 
-## 4. Penerapan Encapsulation dan Inheritance
+## Penerapan Encapsulation dan Inheritance
 
 ### Encapsulation
 Seluruh atribut pada `Ekspedisi`, `Kru` (beserta subclass-nya), dan `PesawatAntariksa` dideklarasikan `private`, dan hanya bisa diakses/diubah lewat getter dan setter publik. Contoh: `idKru`, `nama`, `usia` pada `Kru.java` bersifat `private`, hanya bisa dibaca lewat `getIdKru()`, `getNama()`, `getUsia()`, atau diubah lewat setter-nya.
@@ -61,7 +61,7 @@ Superclass abstrak `Kru` punya dua subclass:
 
 Keduanya mewarisi atribut umum (`idKru`, `nama`, `usia`) beserta getter/setter dari `Kru`, dan memanggil constructor superclass lewat `super(...)`. `KruController` menyimpan data dalam satu `ArrayList<Kru>` berisi campuran objek `Astronot` dan `Teknisi`.
 
-## 5. Penerapan Polymorphism dan Abstraction
+## Penerapan Polymorphism dan Abstraction
 
 ### Abstraction
 `Kru` dideklarasikan sebagai **abstract class** (`public abstract class Kru`), tidak bisa di-instantiate langsung. Di dalamnya ada dua **abstract method**:
@@ -78,7 +78,7 @@ Diterapkan dalam dua bentuk, ditambah satu bentuk baru lewat interface:
 2. **Method Overloading** - setiap Controller punya dua method pencarian dengan nama sama tapi parameter beda, misalnya `cariKru(int id)` vs `cariKru(String nama)`. Java memilih method yang sesuai berdasarkan tipe parameter saat dipanggil.
 3. **Polymorphism lewat Interface** (baru di Mini Project 3) - `RingkasanController` menyimpan data dalam `List<EntitasAntariksa>` berisi campuran `Ekspedisi`, `Astronot`, `Teknisi`, dan `PesawatAntariksa` -- empat class yang **tidak** berada dalam satu hierarki pewarisan yang sama. Saat method `getIdentitas()` dipanggil pada tiap elemen list, Java tetap menjalankan implementasi sesuai tipe objek aslinya. Ini membuktikan polymorphism tidak hanya berlaku lewat inheritance (subclass-superclass), tapi juga lewat interface (unrelated classes).
 
-## 6. Penerapan Nilai Tambah: Interface
+## Penerapan Nilai Tambah: Interface
 
 File: `model/EntitasAntariksa.java`
 
@@ -98,7 +98,7 @@ Interface ini dipakai secara konkret di `controller/RingkasanController.java`: m
 
 Manfaat nyatanya: `RingkasanController` tidak perlu tahu atau peduli apakah suatu data itu `Ekspedisi`, `Astronot`, `Teknisi`, atau `PesawatAntariksa` -- selama class itu `implements EntitasAntariksa`, ia bisa diperlakukan secara seragam.
 
-## 7. Validasi Input yang Diterapkan
+## Validasi Input yang Diterapkan
 
 - Input angka wajib berupa angka valid (`inputInt`), diminta ulang jika tidak valid.
 - Input angka tertentu wajib lebih dari 0, misalnya ID, durasi, kapasitas, usia (`inputIntPositif`).
@@ -107,12 +107,33 @@ Manfaat nyatanya: `RingkasanController` tidak perlu tahu atau peduli apakah suat
 - ID pada setiap entitas divalidasi agar tidak duplikat sebelum data baru ditambahkan.
 - Pilihan menu dan pilihan status divalidasi terhadap rentang pilihan yang tersedia.
 
-## 8. Dummy Data Awal
+## Dummy Data Awal
 
 - **Ekspedisi**: "Galang Dana BEM KM UNMUL" (tujuan Mars, status Berlangsung).
 - **Kru**: 1 data Astronot ("Dylan Al Furqon") dan 1 data Teknisi ("Tony Stark").
 - **Pesawat Antariksa**: "Taufan BAEK" (jenis Roket Orbital, status Siap).
 
-## Penulis
-
-Muhammad Dylan Al Furqon
+## Dokumentasi Output
+<img width="279" height="170" alt="image" src="https://github.com/user-attachments/assets/39c57942-c593-4c44-ab49-98235a0a628d" /> <br>
+<img width="277" height="176" alt="image" src="https://github.com/user-attachments/assets/2fd1e529-1604-4189-ab5b-3f5c9d45ed4f" /> <br>
+<img width="269" height="276" alt="image" src="https://github.com/user-attachments/assets/c3163282-897b-47da-a4de-43a0dbb9b77d" /> <br>
+<img width="299" height="247" alt="image" src="https://github.com/user-attachments/assets/92103122-780e-47f0-9a9d-a82f5da152ec" /> <br>
+<img width="306" height="221" alt="image" src="https://github.com/user-attachments/assets/e59be04e-bd1e-41c5-a4d3-163b6d4c1cb4" /> 
+<img width="300" height="243" alt="image" src="https://github.com/user-attachments/assets/961c6ba2-f75a-4090-ab14-cfbadd3f33c8" />
+<img width="331" height="75" alt="image" src="https://github.com/user-attachments/assets/56fe7c10-da92-4a9f-84cd-7fa6da566477" /> <br>
+<img width="293" height="158" alt="image" src="https://github.com/user-attachments/assets/5285b82c-a8af-406c-8c74-d657715539ad" /> 
+<img width="295" height="173" alt="image" src="https://github.com/user-attachments/assets/bfd0831f-851a-4866-bf8f-69524c1be07b" /> <br>
+<img width="238" height="238" alt="image" src="https://github.com/user-attachments/assets/6ff33acd-809c-420a-a531-dafb3fd76ea9" /> <br>
+<img width="525" height="347" alt="image" src="https://github.com/user-attachments/assets/539c869e-ba34-49ea-b4f6-829f1197a1a6" /> <br>
+<img width="276" height="156" alt="image" src="https://github.com/user-attachments/assets/b2f43bfb-20d3-4b15-9a47-eefcda796d81" /> <br>
+<img width="523" height="347" alt="image" src="https://github.com/user-attachments/assets/ec704846-0cd0-45c0-bed9-81d7e81f15c9" />
+<img width="287" height="80" alt="image" src="https://github.com/user-attachments/assets/06621d8b-c309-49bd-9e2a-b58e43dafac3" /> <br>
+<img width="535" height="244" alt="image" src="https://github.com/user-attachments/assets/833766d2-0236-4d3b-8061-80312f82bbd4" />
+<img width="269" height="250" alt="image" src="https://github.com/user-attachments/assets/a24c34a8-9686-4c29-aae4-c945032da8df" /> <br>
+<img width="288" height="258" alt="image" src="https://github.com/user-attachments/assets/13752287-ae48-4759-99ea-4f31709d0a87" /> <br>
+<img width="309" height="250" alt="image" src="https://github.com/user-attachments/assets/0d2dc90f-8685-4a3f-be31-70f262639609" /> <br>
+<img width="288" height="245" alt="image" src="https://github.com/user-attachments/assets/924c48c3-c5db-4b1c-8d72-080f85a5d2c7" />
+<img width="316" height="89" alt="image" src="https://github.com/user-attachments/assets/dca38e64-21e5-44f1-80f0-9fc11de95f6e" /> <br>
+<img width="290" height="147" alt="image" src="https://github.com/user-attachments/assets/bb8d2c35-5f4e-4515-b972-f3a20a2b3d6e" />
+<img width="420" height="138" alt="image" src="https://github.com/user-attachments/assets/c4375c23-9a15-4a10-899d-14cbfacfea52" /> <br>
+<img width="575" height="320" alt="image" src="https://github.com/user-attachments/assets/d8537d30-1695-4d52-9cbb-cc9eefae9ee8" /> <br>
