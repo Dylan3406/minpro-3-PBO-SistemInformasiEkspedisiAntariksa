@@ -1,4 +1,4 @@
-# Minpro-3-PBO-ManajemenEkspedisiAntariksa
+# Minpro 3 PBO Sistem Informasi Ekspedisi Antariksa
 
 Mini Project 3 - Praktikum Pemrograman Berorientasi Objek.
 Program ini melanjutkan Mini Project 2 (Sistem Pengelolaan Ekspedisi Antariksa) dengan tetap mempertahankan struktur MVC, encapsulation, inheritance, dan polymorphism yang sudah ada, serta menambahkan **interface** sebagai nilai tambah.
