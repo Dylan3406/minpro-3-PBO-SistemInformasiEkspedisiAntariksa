@@ -113,15 +113,6 @@ Manfaat nyatanya: `RingkasanController` tidak perlu tahu atau peduli apakah suat
 - **Kru**: 1 data Astronot ("Dylan Al Furqon") dan 1 data Teknisi ("Tony Stark").
 - **Pesawat Antariksa**: "Taufan BAEK" (jenis Roket Orbital, status Siap).
 
-## 9. Cara Menjalankan
-
-```bash
-cd src
-javac -d ../out mini/project/pkg1/Main.java model/*.java view/*.java controller/*.java
-cd ..
-java -cp out mini.project.pkg1.Main
-```
-
 ## Penulis
 
 Muhammad Dylan Al Furqon
