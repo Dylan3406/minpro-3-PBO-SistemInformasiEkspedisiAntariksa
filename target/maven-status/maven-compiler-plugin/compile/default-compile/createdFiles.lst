@@ -1,0 +1,12 @@
+controller\EkspedisiController.class
+controller\PesawatController.class
+model\EntitasAntariksa.class
+model\PesawatAntariksa.class
+model\Astronot.class
+view\View.class
+controller\KruController.class
+model\Ekspedisi.class
+model\Teknisi.class
+controller\Ringkasan.class
+main\Main.class
+model\Kru.class
