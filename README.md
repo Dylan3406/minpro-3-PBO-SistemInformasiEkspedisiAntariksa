@@ -115,10 +115,18 @@ Manfaat nyatanya: `RingkasanController` tidak perlu tahu atau peduli apakah suat
 
 ## Dokumentasi Output
 <img width="279" height="170" alt="image" src="https://github.com/user-attachments/assets/39c57942-c593-4c44-ab49-98235a0a628d" /> <br>
+Tampilan menu utama berisi 4 modul `Ekspedisi, Kru, Pesawat, Ringkasan Semua Data` dan pilihan Keluar. Program berjalan dalam loop sampai pengguna memilih keluar. <br>
+
 <img width="277" height="176" alt="image" src="https://github.com/user-attachments/assets/2fd1e529-1604-4189-ab5b-3f5c9d45ed4f" /> <br>
+Menampilkan dummy data awal ("Galang Dana BEM KM UNMUL", tujuan Mars, status Berlangsung) yang diisi otomatis oleh `EkspedisiController`. <br>
+
 <img width="269" height="276" alt="image" src="https://github.com/user-attachments/assets/c3163282-897b-47da-a4de-43a0dbb9b77d" /> <br>
+Input data ekspedisi baru (ID, nama, tujuan, durasi, status). ID divalidasi agar tidak duplikat. <br>
+
 <img width="299" height="247" alt="image" src="https://github.com/user-attachments/assets/92103122-780e-47f0-9a9d-a82f5da152ec" /> <br>
 <img width="306" height="221" alt="image" src="https://github.com/user-attachments/assets/e59be04e-bd1e-41c5-a4d3-163b6d4c1cb4" /> 
+Mengubah data ekspedisi berdasarkan ID yang dipilih. <br>
+
 <img width="300" height="243" alt="image" src="https://github.com/user-attachments/assets/961c6ba2-f75a-4090-ab14-cfbadd3f33c8" />
 <img width="331" height="75" alt="image" src="https://github.com/user-attachments/assets/56fe7c10-da92-4a9f-84cd-7fa6da566477" /> <br>
 <img width="293" height="158" alt="image" src="https://github.com/user-attachments/assets/5285b82c-a8af-406c-8c74-d657715539ad" /> 
