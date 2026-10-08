@@ -125,11 +125,16 @@ Input data ekspedisi baru (ID, nama, tujuan, durasi, status). ID divalidasi agar
 
 <img width="299" height="247" alt="image" src="https://github.com/user-attachments/assets/92103122-780e-47f0-9a9d-a82f5da152ec" /> <br>
 <img width="306" height="221" alt="image" src="https://github.com/user-attachments/assets/e59be04e-bd1e-41c5-a4d3-163b6d4c1cb4" /> 
-<img width="300" height="243" alt="image" src="https://github.com/user-attachments/assets/961c6ba2-f75a-4090-ab14-cfbadd3f33c8" />
+<img width="300" height="243" alt="image" src="https://github.com/user-attachments/assets/961c6ba2-f75a-4090-ab14-cfbadd3f33c8" /> <br>
 Mengubah data ekspedisi berdasarkan ID yang dipilih. <br>
-<img width="331" height="75" alt="image" src="https://github.com/user-attachments/assets/56fe7c10-da92-4a9f-84cd-7fa6da566477" /> <br>
-<img width="293" height="158" alt="image" src="https://github.com/user-attachments/assets/5285b82c-a8af-406c-8c74-d657715539ad" /> 
+<img width="331" height="75" alt="image" src="https://github.com/user-attachments/assets/56fe7c10-da92-4a9f-84cd-7fa6da566477" /> 
+<img width="293" height="158" alt="image" src="https://github.com/user-attachments/assets/5285b82c-a8af-406c-8c74-d657715539ad" /> <br>
+Menghapus data ekspedisi berdasarkan ID, lalu daftar ditampilkan ulang untuk memastikan data sudah terhapus. <br>
 <img width="295" height="173" alt="image" src="https://github.com/user-attachments/assets/bfd0831f-851a-4866-bf8f-69524c1be07b" /> <br>
+Tampilkan data: menampilkan campuran objek `Astronot` dan `Teknisi` dalam satu `ArrayList<Kru>`. Peran dan detail tugas berbeda per jenis kru. Ini bukti **polymorphism (overriding)** lewat `getPeran()` dan `getDetailTugas()`.
+Tambah Astronot:* meminta input tambahan `spesialisasi` dan `jamTerbang`.
+Tambah Teknisi:* meminta input tambahan `bidangKeahlian` dan `sertifikasi`.
+Ubah dan Hapus:* sama seperti modul Ekspedisi.
 <img width="238" height="238" alt="image" src="https://github.com/user-attachments/assets/6ff33acd-809c-420a-a531-dafb3fd76ea9" /> <br>
 <img width="525" height="347" alt="image" src="https://github.com/user-attachments/assets/539c869e-ba34-49ea-b4f6-829f1197a1a6" /> <br>
 <img width="276" height="156" alt="image" src="https://github.com/user-attachments/assets/b2f43bfb-20d3-4b15-9a47-eefcda796d81" /> <br>
