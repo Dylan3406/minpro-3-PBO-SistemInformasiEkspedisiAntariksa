@@ -54,14 +54,7 @@ Diterapkan dalam dua bentuk, ditambah satu bentuk baru lewat interface:
 
 ## Penerapan Nilai Tambah: Interface
 
-File: `model/EntitasAntariksa.java`
-
-```java
-public interface EntitasAntariksa {
-    String getIdentitas();
-    void tampilkanData();
-}
-```
+<img width="332" height="109" alt="image" src="https://github.com/user-attachments/assets/ba487b7b-d9c4-4cae-b977-9496b08ae79f" />
 
 Diimplementasikan oleh **tiga class yang berbeda hierarki**:
 - `Ekspedisi implements EntitasAntariksa`
