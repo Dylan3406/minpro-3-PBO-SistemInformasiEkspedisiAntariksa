@@ -125,9 +125,8 @@ Input data ekspedisi baru (ID, nama, tujuan, durasi, status). ID divalidasi agar
 
 <img width="299" height="247" alt="image" src="https://github.com/user-attachments/assets/92103122-780e-47f0-9a9d-a82f5da152ec" /> <br>
 <img width="306" height="221" alt="image" src="https://github.com/user-attachments/assets/e59be04e-bd1e-41c5-a4d3-163b6d4c1cb4" /> 
-Mengubah data ekspedisi berdasarkan ID yang dipilih. <br>
-
 <img width="300" height="243" alt="image" src="https://github.com/user-attachments/assets/961c6ba2-f75a-4090-ab14-cfbadd3f33c8" />
+Mengubah data ekspedisi berdasarkan ID yang dipilih. <br>
 <img width="331" height="75" alt="image" src="https://github.com/user-attachments/assets/56fe7c10-da92-4a9f-84cd-7fa6da566477" /> <br>
 <img width="293" height="158" alt="image" src="https://github.com/user-attachments/assets/5285b82c-a8af-406c-8c74-d657715539ad" /> 
 <img width="295" height="173" alt="image" src="https://github.com/user-attachments/assets/bfd0831f-851a-4866-bf8f-69524c1be07b" /> <br>
