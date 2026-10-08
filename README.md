@@ -1,10 +1,5 @@
 # Minpro 3 PBO Sistem Informasi Ekspedisi Antariksa
-
-Mini Project 3 - Praktikum Pemrograman Berorientasi Objek.
-Program ini melanjutkan Mini Project 2 (Sistem Pengelolaan Ekspedisi Antariksa) dengan tetap mempertahankan struktur MVC, encapsulation, inheritance, dan polymorphism yang sudah ada, serta menambahkan **interface** sebagai nilai tambah.
-
 ## Deskripsi Singkat Program
-
 Program ini adalah aplikasi konsol (CLI) berbasis Java untuk mengelola data operasional sebuah lembaga eksplorasi antariksa, yang terdiri dari tiga entitas utama:
 
 - **Ekspedisi** - misi eksplorasi antariksa (nama, tujuan, durasi, status).
