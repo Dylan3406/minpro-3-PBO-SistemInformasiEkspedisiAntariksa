@@ -39,10 +39,9 @@ Keduanya mewarisi atribut umum (`idKru`, `nama`, `usia`) beserta getter/setter d
 
 ### Abstraction
 `Kru` dideklarasikan sebagai **abstract class** (`public abstract class Kru`), tidak bisa di-instantiate langsung. Di dalamnya ada dua **abstract method**:
-```java
-public abstract String getPeran();
-public abstract String getDetailTugas();
-```
+
+<img width="404" height="43" alt="image" src="https://github.com/user-attachments/assets/90bc3912-e138-472c-8d59-1739a00addf2" />
+
 Kedua method ini tidak punya isi di `Kru`, dan **wajib** diimplementasikan oleh setiap subclass (`Astronot`, `Teknisi`) sesuai perannya masing-masing. Ini memaksa setiap jenis kru baru di masa depan untuk mendefinisikan perilakunya sendiri, sekaligus menyembunyikan detail implementasi di balik kontrak umum `Kru`.
 
 ### Polymorphism
