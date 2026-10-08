@@ -9,32 +9,11 @@ Program ini adalah aplikasi konsol (CLI) berbasis Java untuk mengelola data oper
 Setiap entitas mendukung operasi CRUD penuh (Tambah, Tampilkan, Ubah, Hapus), ditambah satu fitur baru di Mini Project 3: **Ringkasan Semua Data**, yang menampilkan Ekspedisi, Kru, dan Pesawat sekaligus dalam satu daftar gabungan.
 
 ## Struktur Package (MVC)
-
-```
-src/
-├── mini/project/pkg1/
-│   └── Main.java              
-├── model/                      
-│   ├── EntitasAntariksa.java   
-│   ├── Ekspedisi.java
-│   ├── Kru.java                
-│   ├── Astronot.java           
-│   ├── Teknisi.java           
-│   └── PesawatAntariksa.java
-├── view/                       
-│   └── View.java
-└── controller/                  
-    ├── EkspedisiController.java
-    ├── KruController.java
-    ├── PesawatController.java
-    └── RingkasanController.java
-```
-
-- **Model** hanya berisi atribut (`private`), constructor, getter/setter, dan method tampilan data miliknya sendiri. Tidak ada logika menu atau `Scanner` di sini.
-- **View** hanya berisi method untuk mencetak teks ke layar dan membaca + memvalidasi input dari `Scanner`. View tidak menyimpan data aplikasi apa pun.
+- **Model** hanya berisi atribut (private), constructor, getter/setter, dan method tampilan data milik dirinya sendiri. Tidak ada logika menu atau `Scanner` di sini.
+- **View** hanya berisi method untuk mencetak teks ke layar dan membaca+memvalidasi input dari `Scanner`. View tidak menyimpan data aplikasi.
 - **Controller** menyimpan `ArrayList` data, berisi seluruh logika CRUD dan validasi (misalnya cek ID duplikat), lalu memanggil `View` untuk berinteraksi dengan pengguna dan `Model` untuk membuat/mengubah objek data.
 - **Main** hanya menampilkan struktur menu dan meneruskan pilihan pengguna ke method Controller yang sesuai.
-
+- 
 ## Penjelasan Alur Program
 
 1. Program dimulai dari `Main.java`, menampilkan menu utama dengan 4 modul (Ekspedisi, Kru, Pesawat, Ringkasan) dan 1 pilihan keluar.
